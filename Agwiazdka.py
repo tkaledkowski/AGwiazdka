@@ -53,6 +53,7 @@ def main():
     target = Point(19, 19, None)
     closed_set = [initial]
     open_set = []
+    road_set = []
 
     current = initial
     while current != target:
@@ -83,12 +84,15 @@ def main():
         return
 
     while current is not None:
+        road_set.append([current.x, current.y])
         net[current.y][current.x] = 3
         current = current.parent
 
     net.reverse()
     for row in net:
         print(row)
+    road_set.reverse()
+    print(road_set)
 
 
 if __name__ == "__main__":
