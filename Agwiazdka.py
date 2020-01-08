@@ -53,7 +53,6 @@ def main():
     target = Point(19, 19, None)
     closed_set = [initial]
     open_set = []
-    road_set = []
 
     current = initial
     while current != target:
@@ -83,6 +82,7 @@ def main():
         print("Nie można odnaleźć ścieżki")
         return
 
+    road_set = []
     while current is not None:
         road_set.append([current.x, current.y])
         net[current.y][current.x] = 3
